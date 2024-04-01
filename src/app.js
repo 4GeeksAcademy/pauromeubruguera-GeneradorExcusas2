@@ -1,7 +1,5 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
@@ -16,22 +14,19 @@ let when = [
   "while I was praying"
 ];
 
+
 let generateExcuse = () => {
-  document.querySelector("#excuse").innerHTML =
-    who[Math.floor(Math.random() * who.length)] +
-    " " +
-    action[Math.floor(Math.random() * action.length)] +
-    " " +
-    what[Math.floor(Math.random() * what.length)] +
-    " " +
+  let excuseHTML = who[Math.floor(Math.random() * who.length)] + " " + 
+    action[Math.floor(Math.random() * action.length)] + " " +
+    what[Math.floor(Math.random() * what.length)] + " " +
     when[Math.floor(Math.random() * when.length)];
+  document.querySelector("#excuse").innerHTML = excuseHTML;
 };
 
+
 window.onload = function() {
-  //write your code here
-  document.querySelector("#btn").addEventListener("click", () => {
+  document.querySelector("#generateExcuse").addEventListener("click", () => {
     generateExcuse();
   });
-
   generateExcuse();
 };
